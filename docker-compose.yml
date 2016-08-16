@@ -1,0 +1,11 @@
+version: '2'
+services:
+  registry-frontend:
+    restart: always
+    image: konradkleine/docker-registry-frontend:v2
+    ports:
+      - 15005:80
+    environment:
+      ENV_DOCKER_REGISTRY_HOST: "${HOST}"
+      ENV_DOCKER_REGISTRY_PORT: "${PORT}"
+      ENV_DOCKER_REGISTRY_USE_SSL: 1
